@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mode d'emploi opérationnel B2B2C Local · Little Worker</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700;900&family=Cedarville+Cursive&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige:    #F2E5D9;
+    --beige-dk: #E8D5C4;
+    --red:      #CE3F26;
+    --blue:     #3654D9;
+    --green:    #51624B;
+    --brown:    #AA5D35;
+    --slate:    #756AC1;
+    --black:    #101D1D;
+    --white:    #FFFFFF;
+    --mid:      #7A6A5A;
+    --rule:     rgba(16,29,29,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--beige);
+    color: var(--black);
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 22px 26px;
+    min-height: 100vh;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+  .header-left { display: flex; align-items: flex-end; gap: 20px; }
+  .lw-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--black);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    border-right: 1.5px solid var(--rule);
+    padding-right: 20px;
+  }
+  .lw-logo span {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 13px;
+    color: var(--green);
+    display: block;
+    font-weight: 400;
+    margin-top: 1px;
+  }
+  .header-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+  .header-title h1 em { font-style: italic; color: var(--red); }
+  .header-title .sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    color: var(--mid);
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .header-right {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    color: var(--mid);
+    text-align: right;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+  .header-right strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--black);
+    display: block;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 700;
+  }
+
+  /* ── FUNNEL DUAL ── */
+  .funnel-block {
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1.5px solid;
+  }
+  .funnel-block.fb-com { border-color: var(--red); }
+  .funnel-block.fb-fid { border-color: var(--green); }
+  .funnel-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    color: var(--white);
+  }
+  .funnel-head.fh-com { background: var(--red); }
+  .funnel-head.fh-fid { background: var(--green); }
+  .funnel-head .fh-emoji { font-size: 14px; }
+  .funnel-head h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    flex-shrink: 0;
+  }
+  .funnel-head .fh-goal {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    margin-left: auto;
+  }
+
+  .funnel-strip {
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    color: var(--white);
+    padding: 14px 12px;
+    gap: 2px;
+  }
+  .f-step { flex: 1; text-align: center; min-width: 0; padding: 0 3px; }
+  .f-step .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--beige);
+    display: block;
+    line-height: 1;
+  }
+  .f-step .lbl {
+    font-family: 'Lato', sans-serif;
+    font-size: 7.5px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: 5px;
+    line-height: 1.2;
+  }
+  .f-step.split .num {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+  .f-step.split .num small {
+    display: block;
+    font-size: 8.5px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.4;
+  }
+  .f-step.f-target .num {
+    font-size: 26px;
+    color: #8FB08A;
+  }
+  .f-step.f-target.f-com .num { color: #F07B6A; }
+  .f-arrow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+  .f-conv {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0 3px;
+  }
+  .f-conv .pct {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+  }
+  .f-conv .ptag {
+    font-family: 'Lato', sans-serif;
+    font-size: 7px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+    display: block;
+    line-height: 1.2;
+  }
+  .f-mult {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .f-mult .mtxt {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.06);
+    border: 1px dashed rgba(255,255,255,0.18);
+    padding: 4px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  .pct-red    { color: #F07B6A; }
+  .pct-blue   { color: #7B9BFF; }
+  .pct-green  { color: #8FB08A; }
+  .pct-yellow { color: #E0C168; }
+  .pct-brown  { color: #D4956A; }
+
+  /* ── LAYOUT ── */
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .grid-b { display: grid; grid-template-columns: 1fr 1.15fr; gap: 12px; margin-bottom: 12px; }
+  .full   { margin-bottom: 12px; }
+  .col    { display: flex; flex-direction: column; gap: 12px; }
+
+  /* ── PANEL ── */
+  .panel { border: 1.5px solid rgba(16,29,29,0.18); border-radius: 5px; overflow: hidden; background: var(--white); }
+  .panel-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border-bottom: 1.5px solid rgba(16,29,29,0.18);
+  }
+  .panel-head .emoji { font-size: 13px; }
+  .panel-head h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .panel-head .badge {
+    margin-left: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: filter 0.15s, transform 0.15s;
+  }
+  a.badge:hover { filter: brightness(1.15); transform: translateX(2px); }
+  .head-red   { background: var(--red);   } .head-red h2,   .head-red .emoji   { color: var(--white); }
+  .head-blue  { background: var(--blue);  } .head-blue h2,  .head-blue .emoji  { color: var(--white); }
+  .head-green { background: var(--green); } .head-green h2, .head-green .emoji { color: var(--white); }
+  .head-brown { background: var(--brown); } .head-brown h2, .head-brown .emoji { color: var(--white); }
+  .head-slate { background: var(--slate); } .head-slate h2, .head-slate .emoji { color: var(--white); }
+  .head-black { background: var(--black); } .head-black h2, .head-black .emoji { color: var(--white); }
+  .badge-white { background: rgba(255,255,255,0.22); color: var(--white); }
+  .badge-dark  { background: rgba(16,29,29,0.08);   color: var(--mid); }
+
+  .panel-body { padding: 10px 12px; }
+
+  /* ── QUICK START — liens + lexique ── */
+  .quick-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 12px; }
+  .liens-block {
+    background: var(--black);
+    border-radius: 5px;
+    padding: 12px 14px;
+    color: var(--white);
+  }
+  .qs-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+  }
+  .liens-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  .lien-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s, border-color 0.15s;
+  }
+  .lien-btn:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateX(2px);
+  }
+  .lien-btn .lico {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .lien-btn .lname {
+    font-size: 9.5px;
+    font-weight: 700;
+    flex: 1;
+  }
+  .lien-btn .larrow {
+    font-size: 10px;
+    opacity: 0.5;
+  }
+
+  .lexique-block {
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    border-radius: 5px;
+    padding: 12px 14px;
+  }
+  .lexique-block .qs-title { color: var(--mid); }
+  .lex-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+  }
+  .lex-card {
+    border-left: 2px solid var(--red);
+    padding: 2px 0 2px 8px;
+  }
+  .lex-card.lc-com { border-color: var(--red); }
+  .lex-card.lc-fid { border-color: var(--green); }
+  .lex-card.lc-tool { border-color: var(--blue); }
+  .lex-card.lc-other { border-color: var(--brown); }
+  .lex-term {
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    color: var(--black);
+  }
+  .lex-term .lex-cat {
+    font-family: 'Lato', sans-serif;
+    font-size: 7px;
+    font-weight: 700;
+    margin-left: 4px;
+    padding: 1px 5px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+  }
+  .lc-com .lex-cat { background: rgba(206,63,38,0.13); color: var(--red); }
+  .lc-fid .lex-cat { background: rgba(81,98,75,0.13); color: var(--green); }
+  .lc-tool .lex-cat { background: rgba(54,84,217,0.13); color: var(--blue); }
+  .lc-other .lex-cat { background: rgba(170,93,53,0.13); color: var(--brown); }
+  .lex-def {
+    font-size: 8.5px;
+    color: var(--mid);
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  /* ── JE DÉMARRE — KIT DE LANCEMENT ── */
+  .kit-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 7px;
+  }
+  .kit-card {
+    border: 1.5px solid var(--rule);
+    border-radius: 5px;
+    padding: 9px 10px;
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .kit-card:hover {
+    border-color: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(206,63,38,0.12);
+  }
+  .kit-step {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--red);
+  }
+  .kit-title {
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--black);
+  }
+  .kit-desc {
+    font-size: 8.5px;
+    color: var(--mid);
+    line-height: 1.4;
+    flex: 1;
+  }
+  .kit-cta {
+    font-size: 7.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--blue);
+    padding-top: 5px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .kit-card:hover .kit-cta { color: var(--red); }
+
+  /* ── KPI TABLE ── */
+  .kpi-table { width: 100%; border-collapse: collapse; }
+  .kpi-table th {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 3px 4px;
+    border-bottom: 1px solid var(--rule);
+    font-weight: 700;
+  }
+  .kpi-table td {
+    padding: 5px 4px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: middle;
+    font-size: 9.5px;
+  }
+  .kpi-table tr:last-child td { border-bottom: none; }
+  .kn { font-weight: 700; }
+  .kv { font-family: 'Playfair Display', serif; font-size: 10px; font-weight: 700; color: var(--red); white-space: nowrap; }
+  .kf { font-size: 8.5px; color: var(--mid); white-space: nowrap; }
+  .ks { font-size: 8.5px; color: var(--mid); }
+  .ks a, a.in-link { color: var(--blue); text-decoration: underline dotted; text-underline-offset: 2px; font-weight: 700; }
+  .ks a:hover, a.in-link:hover { color: var(--red); }
+
+  /* ── ROWS ── */
+  .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .row:last-child { border-bottom: none; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .d-red   { background: var(--red); }
+  .d-blue  { background: var(--blue); }
+  .d-green { background: var(--green); }
+  .d-brown { background: var(--brown); }
+  .d-slate { background: var(--slate); }
+  .d-mid   { background: var(--mid); }
+  .row-note { font-size: 9px; color: var(--mid); flex: 1; line-height: 1.4; }
+
+  /* ── PLAN D'ACTION — phases ── */
+  .phase-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    color: var(--white);
+  }
+  .phase-head.ph-com { background: var(--red); }
+  .phase-head.ph-fid { background: var(--green); }
+  .phase-head .ph-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 900;
+    font-style: italic;
+  }
+  .phase-head .ph-context {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    flex: 1;
+  }
+  .phase-head .ph-total {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    background: rgba(255,255,255,0.18);
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: -0.3px;
+  }
+  .phase-bars {
+    display: flex;
+    height: 9px;
+    margin-bottom: 0;
+  }
+  .phase-bar-com { background: var(--red); }
+  .phase-bar-fid { background: var(--green); }
+  .phase-bar-adm { background: var(--mid); }
+  .phase-body {
+    display: grid;
+    grid-template-columns: 5fr 1.4fr;
+    gap: 0;
+  }
+  .phase-week {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+  .phase-day {
+    border-right: 1px solid var(--rule);
+    padding: 10px 10px;
+    background: var(--white);
+  }
+  .phase-day:last-child { border-right: none; }
+  .phase-day .pd-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--black);
+    margin-bottom: 2px;
+    display: block;
+  }
+  .phase-day .pd-hours {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    font-weight: 900;
+    color: var(--mid);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .phase-task {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 3px 0;
+    font-size: 8.5px;
+    line-height: 1.35;
+  }
+  .phase-task .pt-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 9px;
+    font-weight: 900;
+    color: var(--black);
+    flex-shrink: 0;
+    min-width: 22px;
+    text-align: right;
+  }
+  .phase-task .pt-time.pt-com { color: var(--red); }
+  .phase-task .pt-time.pt-fid { color: var(--green); }
+  .phase-task .pt-time.pt-adm { color: var(--mid); }
+  .phase-task .pt-task { flex: 1; color: var(--black); }
+  .phase-summary {
+    background: var(--beige);
+    border-left: 1.5px solid var(--rule);
+    padding: 10px 14px;
+  }
+  .ps-cat {
+    margin-bottom: 9px;
+  }
+  .ps-cat:last-child { margin-bottom: 0; }
+  .ps-cat-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .ps-cat-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 8.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+  }
+  .ps-cat-name.psn-com { color: var(--red); }
+  .ps-cat-name.psn-fid { color: var(--green); }
+  .ps-cat-name.psn-adm { color: var(--mid); }
+  .ps-cat-h {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .ps-cat-h.psh-com { color: var(--red); }
+  .ps-cat-h.psh-fid { color: var(--green); }
+  .ps-cat-h.psh-adm { color: var(--mid); }
+  .ps-cat-pct {
+    font-size: 9px;
+    color: var(--mid);
+    margin-left: 4px;
+    font-weight: 700;
+  }
+  .ps-mini-bar {
+    height: 4px;
+    background: rgba(16,29,29,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .ps-mini-fill { height: 100%; }
+  .psmf-com { background: var(--red); }
+  .psmf-fid { background: var(--green); }
+  .psmf-adm { background: var(--mid); }
+
+  /* ── DIAGNOSTIC (sans dot) ── */
+  .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+  .diag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    background: var(--beige);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  }
+  a.diag-row:hover {
+    background: var(--beige-dk);
+    border-color: var(--mid);
+    transform: translateX(2px);
+  }
+  .diag-content { flex: 1; min-width: 0; }
+  .diag-label { font-size: 9.5px; font-weight: 700; line-height: 1.3; }
+  .diag-meta { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+  .diag-kpi   { font-size: 8px; color: var(--mid); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; }
+  .diag-action {
+    font-size: 8px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+  }
+  .da-red   { background: rgba(206,63,38,0.12);   color: var(--red); }
+  .da-blue  { background: rgba(54,84,217,0.12);   color: var(--blue); }
+  .da-green { background: rgba(81,98,75,0.12);    color: var(--green); }
+  .da-brown { background: rgba(170,93,53,0.12);   color: var(--brown); }
+  .da-slate { background: rgba(117,106,193,0.12); color: var(--slate); }
+
+  /* ── PARTNER CARDS — CENTERED + ENERGY BAR ── */
+  .partner-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 8px; }
+  .pc {
+    border-radius: 4px;
+    padding: 12px 10px;
+    border: 1.5px solid;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .pc-green { border-color: var(--green); background: rgba(81,98,75,0.08); }
+  .pc-brown { border-color: var(--brown); background: rgba(170,93,53,0.06); }
+  .pc-mid   { border-color: rgba(16,29,29,0.2); background: rgba(16,29,29,0.03); }
+  .pc .pnum {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1px;
+  }
+  .pc-green .pnum { color: var(--green); }
+  .pc-brown .pnum { color: var(--brown); }
+  .pc-mid   .pnum { color: var(--mid); }
+  .pc .ptag {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 3px;
+    display: block;
+  }
+  .pc-green .ptag { color: var(--green); }
+  .pc-brown .ptag { color: var(--brown); }
+  .pc-mid   .ptag { color: var(--mid); }
+  .pc .pdesc {
+    font-size: 8.5px;
+    color: var(--black);
+    line-height: 1.4;
+    text-align: center;
+  }
+  .pc .energy {
+    width: 100%;
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px dashed var(--rule);
+  }
+  .energy-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(16,29,29,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+  .energy-fill { height: 100%; border-radius: 3px; }
+  .ef-green { background: var(--green); }
+  .ef-brown { background: var(--brown); }
+  .ef-mid   { background: var(--mid); }
+  .energy-lbl {
+    font-size: 7.5px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+  .energy-pct {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 12px;
+    margin-right: 4px;
+  }
+  .pc-green .energy-pct { color: var(--green); }
+  .pc-brown .energy-pct { color: var(--brown); }
+  .pc-mid   .energy-pct { color: var(--mid); }
+
+  /* ── EVENTS ── */
+  .ev-section-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 8.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    margin-top: 4px;
+  }
+  .ev-section-title:first-child { margin-top: 0; }
+  .ev-section-title::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ev-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 10px; }
+  .ev-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+  .ev-card {
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    padding: 9px 11px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    position: relative;
+  }
+  .ev-card:hover {
+    border-color: var(--slate);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(16,29,29,0.06);
+  }
+  .ev-card-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .ev-card-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .evi-green  { background: rgba(81,98,75,0.13); }
+  .evi-brown  { background: rgba(170,93,53,0.14); }
+  .evi-blue   { background: rgba(54,84,217,0.13); }
+  .evi-slate  { background: rgba(117,106,193,0.15); }
+  .evi-purple { background: rgba(117,106,193,0.22); }
+  .ev-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.1;
+    flex: 1;
+  }
+  .ev-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .ev-meta-tag {
+    font-size: 7.5px;
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  .em-freq  { background: var(--black); color: var(--white); }
+  .em-cost  { background: rgba(81,98,75,0.13); color: var(--green); }
+  .em-tool  { background: rgba(54,84,217,0.13); color: var(--blue); }
+  .em-scope { background: rgba(170,93,53,0.13); color: var(--brown); }
+  .ev-card-desc {
+    font-size: 8.5px;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+  .ev-card-cta {
+    font-size: 7.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--slate);
+    padding-top: 5px;
+    border-top: 1px solid var(--rule);
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ev-card-cta .arrow { transition: transform 0.15s; }
+  .ev-card:hover .arrow { transform: translateX(3px); }
+  .ev-roi {
+    margin-top: 10px;
+    padding: 7px 10px;
+    background: linear-gradient(90deg, rgba(117,106,193,0.08), rgba(117,106,193,0.03));
+    border-radius: 4px;
+    font-size: 8.5px;
+    line-height: 1.4;
+    color: var(--slate);
+    border-left: 3px solid var(--slate);
+  }
+  .ev-roi strong {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 8px;
+    color: var(--slate);
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .sdiv {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    color: var(--mid);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+  }
+  .sdiv::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* ── TAGS ── */
+  .tag {
+    font-size: 8px;
+    padding: 2px 7px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-right: 4px;
+    margin-top: 2px;
+  }
+  .t-red   { background: rgba(206,63,38,0.12);  color: var(--red); }
+  .t-green { background: rgba(81,98,75,0.12);   color: var(--green); }
+  .t-blue  { background: rgba(54,84,217,0.12);  color: var(--blue); }
+  .t-brown { background: rgba(170,93,53,0.12);  color: var(--brown); }
+
+  /* ── PARTNER PROFILES (AI / CPI / OTHER) ── */
+  .profiles {
+    display: grid;
+    grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .prof-intro {
+    background: var(--black);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 14px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .prof-intro .pnum-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--beige);
+  }
+  .prof-intro .pnum-big em {
+    font-style: normal;
+    font-size: 22px;
+    color: var(--red);
+  }
+  .prof-intro .pintro-lbl {
+    font-family: 'Lato', sans-serif;
+    font-size: 8.5px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .prof-intro .ptxt {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--white);
+    margin-top: 4px;
+  }
+  .prof-intro .ptxt em { color: var(--beige); font-style: italic; }
+  .prof-card {
+    border: 1.5px solid;
+    border-radius: 5px;
+    padding: 10px 13px;
+    background: var(--white);
+  }
+  .pcard-blue { border-color: var(--blue); }
+  .pcard-slate { border-color: var(--slate); }
+  .pcard-mid { border-color: rgba(16,29,29,0.25); background: rgba(16,29,29,0.02); }
+  .prof-card .ph {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 5px;
+  }
+  .prof-card .ph-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .pcard-blue .ph-tag { color: var(--blue); }
+  .pcard-slate .ph-tag { color: var(--slate); }
+  .pcard-mid .ph-tag { color: var(--mid); font-size: 14px; }
+  .prof-card .ph-name {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--black);
+    flex: 1;
+  }
+  .pcard-mid .ph-name { font-size: 9px; }
+  .prof-card .ph-share {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 900;
+  }
+  .pcard-blue .ph-share { color: var(--blue); }
+  .pcard-slate .ph-share { color: var(--slate); }
+  .pcard-mid .ph-share { color: var(--mid); }
+  .prof-card .pv {
+    font-size: 9px;
+    line-height: 1.45;
+    margin-bottom: 4px;
+  }
+  .pcard-mid .pv { font-size: 8.5px; }
+  .prof-card .pv strong { color: var(--black); font-weight: 900; }
+  .prof-card .pquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 1.35;
+    margin-top: 6px;
+    padding: 6px 8px;
+    border-left: 2px solid;
+    background: rgba(0,0,0,0.02);
+    border-radius: 0 3px 3px 0;
+  }
+  .pcard-blue .pquote { border-color: var(--blue); color: var(--blue); }
+  .pcard-slate .pquote { border-color: var(--slate); color: var(--slate); }
+  .prof-card .pretrocom {
+    margin-top: 6px;
+    font-size: 8.5px;
+    padding: 5px 8px;
+    background: rgba(81,98,75,0.1);
+    border-radius: 3px;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* ── LEXIQUE CTA ── */
+  .lex-cta {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 8px 0;
+  }
+  .lex-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(16,29,29,0.1);
+  }
+  .lex-cta a:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(206,63,38,0.25);
+  }
+  .lex-cta .lex-icon { font-size: 14px; }
+  .lex-cta .lex-arrow { transition: transform 0.2s; }
+  .lex-cta a:hover .lex-arrow { transform: translateX(4px); }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+    margin-top: 14px;
+    padding-top: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer .brand { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 900; }
+  footer .brand span {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  footer .tagline {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    color: var(--mid);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  footer .links {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    color: var(--mid);
+    letter-spacing: 0.5px;
+  }
+  footer .links a { color: var(--blue); text-decoration: underline dotted; text-underline-offset: 2px; font-weight: 700; }
+  footer .links a:hover { color: var(--red); }
+
+  @media print {
+    body { padding: 10px 14px; }
+    .grid-3, .grid-2, .grid-b, .profiles { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <div class="lw-logo">
+      Little Worker
+      <span>B2B2C Local</span>
+    </div>
+    <div class="header-title">
+      <h1>Mode d'emploi opérationnel<br><em>B2B2C Local</em></h1>
+      <div class="sub">Chargé de partenariat · Directeur d'agence · Usage interne</div>
+    </div>
+  </div>
+  <div class="header-right">
+    Objectif mensuel
+    <strong>50 k€ marge · 3,33 contrats / mois · 40 contrats / an</strong>
+    Commercialisation 3-4 mois → Fidélisation au long cours
+  </div>
+</header>
+
+<!-- FUNNEL 1 — COMMERCIALISATION -->
+<div class="funnel-block fb-com">
+  <div class="funnel-head fh-com">
+    <span class="fh-emoji">🔴</span>
+    <h2>Commercialisation</h2>
+    <span class="fh-goal">Atteindre 80 partenaires actifs en 3 à 4 mois</span>
+  </div>
+  <div class="funnel-strip">
+    <div class="f-step"><span class="num">100</span><span class="lbl">Prises de contact / sem</span></div>
+    <div class="f-conv"><span class="pct pct-red">20%</span><span class="ptag">Contact → RDV</span></div>
+    <div class="f-arrow">→</div>
+    <div class="f-step"><span class="num">20</span><span class="lbl">RDV (R1) / sem</span></div>
+    <div class="f-conv"><span class="pct pct-blue">33%</span><span class="ptag">RDV → Convention</span></div>
+    <div class="f-arrow">→</div>
+    <div class="f-step"><span class="num">6</span><span class="lbl">Conventions / sem</span></div>
+    <div class="f-mult"><span class="mtxt">× 4 semaines</span></div>
+    <div class="f-step"><span class="num">20-25</span><span class="lbl">Nouveaux partenaires / mois</span></div>
+    <div class="f-mult"><span class="mtxt">× 3-4 mois</span></div>
+    <div class="f-step f-target f-com"><span class="num">80</span><span class="lbl">Partenaires actifs (objectif)</span></div>
+  </div>
+</div>
+
+<!-- FUNNEL 2 — FIDÉLISATION -->
+<div class="funnel-block fb-fid">
+  <div class="funnel-head fh-fid">
+    <span class="fh-emoji">🟢</span>
+    <h2>Fidélisation</h2>
+    <span class="fh-goal">Transformer 80 partenaires en 40 contrats / an</span>
+  </div>
+  <div class="funnel-strip">
+    <div class="f-step split"><span class="num">80<small>16 TOP · 24 MID · 40 LOW</small></span><span class="lbl">Partenaires actifs</span></div>
+    <div class="f-conv"><span class="pct pct-green">25% / mois</span><span class="ptag">Partenaire → Lead</span></div>
+    <div class="f-arrow">→</div>
+    <div class="f-step"><span class="num">20</span><span class="lbl">Leads / mois <small style="opacity:0.6;display:block;font-size:7px;">(60/trim)</small></span></div>
+    <div class="f-conv"><span class="pct pct-yellow">80%</span><span class="ptag">Lead → Lead passé</span></div>
+    <div class="f-arrow">→</div>
+    <div class="f-step"><span class="num">16</span><span class="lbl">Leads passés / mois</span></div>
+    <div class="f-conv"><span class="pct pct-brown">21%</span><span class="ptag">Passé → Contrat</span></div>
+    <div class="f-arrow">→</div>
+    <div class="f-step split"><span class="num">3,33<small>2,5 CT (7 k€)<br>0,83 CG (39 k€)</small></span><span class="lbl">Contrats / mois</span></div>
+    <div class="f-mult"><span class="mtxt">× 12 mois</span></div>
+    <div class="f-step f-target split"><span class="num">40<small>30 CT + 10 CG / an</small></span><span class="lbl">Contrats / an</span></div>
+  </div>
+</div>
+
+<!-- QUICK START — Liens utiles + Lexique express -->
+<div class="sdiv">Quick start — Liens outils & glossaire essentiel</div>
+<div class="quick-grid" style="margin-bottom:12px;">
+
+  <div class="liens-block">
+    <div class="qs-title">🔗 Liens outils</div>
+    <div class="liens-grid">
+      <a class="lien-btn" href="https://pro.littleworker.fr/" target="_blank" rel="noopener">
+        <span class="lico">🛠️</span><span class="lname">LW Pro</span><span class="larrow">↗</span>
+      </a>
+      <a class="lien-btn" href="https://fly.customer.io/login" target="_blank" rel="noopener">
+        <span class="lico">📧</span><span class="lname">Customer.io</span><span class="larrow">↗</span>
+      </a>
+      <a class="lien-btn" href="https://app-eu1.hubspot.com/reports-dashboard/25766264/view/108989095?appliedIlsFilters=JTdCJTIyMTA4OTg5MDk1JTIyJTNBJTdCJTIyMC0zJTIyJTNBJTdCJTIyZmlsdGVycyUyMiUzQSU1QiU3QiUyMnByb3BlcnR5TmFtZSUyMiUzQSUyMnJlZmVyZW50X2IyYl9uZXclMjIlMkMlMjJwcm9wZXJ0eVR5cGUlMjIlM0ElMjJlbnVtZXJhdGlvbiUyMiUyQyUyMm9wZXJhdG9yJTIyJTNBJTIySVNfS05PV04lMjIlMkMlMjJ2YWx1ZSUyMiUzQSU3QiUyMnByb3BlcnR5VHlwZSUyMiUzQSUyMmFsbHR5cGVzJTIyJTJDJTIyb3BlcmF0b3IlMjIlM0ElMjJJU19LTk9XTiUyMiU3RCUyQyUyMmlzSW52YWxpZFByb3BlcnR5JTIyJTNBZmFsc2UlN0QlMkMlN0IlMjJwcm9wZXJ0eU5hbWUlMjIlM0ElMjJkZWFsbmFtZSUyMiUyQyUyMnByb3BlcnR5VHlwZSUyMiUzQSUyMnN0cmluZyUyMiUyQyUyMm9wZXJhdG9yJTIyJTNBJTIyRE9FU19OT1RfQ09OVEFJTiUyMiUyQyUyMnZhbHVlJTIyJTNBJTdCJTIycHJvcGVydHlUeXBlJTIyJTNBJTIybXVsdGlzdHJpbmclMjIlMkMlMjJvcGVyYXRvciUyMiUzQSUyMkRPRVNfTk9UX0NPTlRBSU4lMjIlMkMlMjJ2YWx1ZXMlMjIlM0ElNUIlMjJQcmV0dG8lMjIlMkMlMjJDRUFQQyUyMiUyQyUyMmRpbW8lMjIlMkMlMjJtYW5kYSUyMiU1RCU3RCUyQyUyMnF1aWNrRmlsdGVyR3JvdXBOYW1lJTIyJTNBJTIyTm9tJTIwZGUlMjBsYSUyMHRyYW5zYWN0aW9uJTIyJTJDJTIyaXNJbnZhbGlkUHJvcGVydHklMjIlM0FmYWxzZSU3RCU1RCUyQyUyMmRhdGFTb3VyY2VOYW1lJTIyJTNBJTIyREVBTCUyMiU3RCUyQyUyMjAtMiUyMiUzQSU3QiUyMmZpbHRlcnMlMjIlM0ElNUIlN0IlMjJwcm9wZXJ0eU5hbWUlMjIlM0ElMjJuYW1lJTIyJTJDJTIycHJvcGVydHlUeXBlJTIyJTNBJTIyc3RyaW5nJTIyJTJDJTIyb3BlcmF0b3IlMjIlM0ElMjJET0VTX05PVF9DT05UQUlOJTIyJTJDJTIydmFsdWUlMjIlM0ElN0IlMjJwcm9wZXJ0eVR5cGUlMjIlM0ElMjJtdWx0aXN0cmluZyUyMiUyQyUyMm9wZXJhdG9yJTIyJTNBJTIyRE9FU19OT1RfQ09OVEFJTiUyMiUyQyUyMnZhbHVlcyUyMiUzQSU1QiUyMlByZXR0byUyMiUyQyUyMkNFQVBDJTIyJTJDJTIyZGltbyUyMiUyQyUyMmFjcXVpc2l0aW9uJTIwaW50ZXJuZSUyMiUyQyUyMm1hbmRhJTIyJTVEJTdEJTJDJTIycXVpY2tGaWx0ZXJHcm91cE5hbWUlMjIlM0ElMjJFbnRyZXByaXNlJTIyJTJDJTIyaXNJbnZhbGlkUHJvcGVydHklMjIlM0FmYWxzZSU3RCU1RCUyQyUyMmRhdGFTb3VyY2VOYW1lJTIyJTNBJTIyQ09NUEFOWSUyMiU3RCU3RCU3RA%3D%3D" target="_blank" rel="noopener">
+        <span class="lico">📊</span><span class="lname">TB B2B-MC</span><span class="larrow">↗</span>
+      </a>
+      <a class="lien-btn" href="https://datastudio.google.com/u/0/reporting/827a92ed-3ab4-43a6-8716-4f86c3834ae5/page/gL9VF" target="_blank" rel="noopener">
+        <span class="lico">📈</span><span class="lname">Looker</span><span class="larrow">↗</span>
+      </a>
+      <div style="grid-column: span 2; display: flex; justify-content: center;">
+        <a class="lien-btn" href="https://littleworker.cerca.io/app" target="_blank" rel="noopener" style="min-width: 60%; justify-content: center;">
+          <span class="lico">📚</span><span class="lname">Cerca — Knowledge base</span><span class="larrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="lexique-block">
+    <div class="qs-title">📖 Lexique express — termes clés</div>
+    <div class="lex-grid">
+      <div class="lex-card lc-com">
+        <div class="lex-term">Prise de contact <span class="lex-cat">COM</span></div>
+        <div class="lex-def">Un contact avec un prospect dans le but de le rencontrer — appel, SMS, LinkedIn, mail, terrain.</div>
+      </div>
+      <div class="lex-card lc-com">
+        <div class="lex-term">RDV Commercialisation (R1) <span class="lex-cat">COM</span></div>
+        <div class="lex-def">Premier RDV avec le prospect partenaire. Présentation LW + démo live LW Pro sur un bien de l'agence.</div>
+      </div>
+      <div class="lex-card lc-fid">
+        <div class="lex-term">Lune de miel <span class="lex-cat">FID</span></div>
+        <div class="lex-def">Période 15 jours - 1 mois post-signature. Objectif : R2 physique + 1er lead ≤ 15j + onboarding LW Pro.</div>
+      </div>
+      <div class="lex-card lc-fid">
+        <div class="lex-term">RDV de Fidélisation <span class="lex-cat">FID</span></div>
+        <div class="lex-def">Entretien de la relation avec le partenaire pour créer du lien fort et générer plus de volume d'affaires.</div>
+      </div>
+      <div class="lex-card lc-fid">
+        <div class="lex-term">Leads passés <span class="lex-cat">FID</span></div>
+        <div class="lex-def">Volume entre les leads reçus par les partenaires et ceux passés aux Sales Façonne (objectif ≥ 80%).</div>
+      </div>
+      <div class="lex-card lc-tool">
+        <div class="lex-term">Étude de rénovation <span class="lex-cat">OUTIL</span></div>
+        <div class="lex-def">Document 4 pages produit via LW Pro : 3 scénarios (Standard / Confort / Excellence) + budgets travaux.</div>
+      </div>
+      <div class="lex-card lc-tool" style="grid-column: span 2;">
+        <div class="lex-term">Étude énergétique <span class="lex-cat">OUTIL</span></div>
+        <div class="lex-def">Variante de l'étude de rénovation axée travaux d'amélioration énergétique (rénovation énergétique, MaPrimeRénov').</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- KIT DE LANCEMENT — Je démarre -->
+<div class="sdiv">Je démarre — Kit de lancement chargé de partenariat</div>
+<div class="full">
+  <div class="kit-grid">
+
+    <a class="kit-card" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=330938429#gid=330938429" target="_blank" rel="noopener">
+      <div class="kit-step">1</div>
+      <div class="kit-title">Qualifier un bon prospect</div>
+      <div class="kit-desc">6 critères : motivation, ouverture, flux réel, structure, différenciation, intérêt accompagnement.</div>
+      <div class="kit-cta"><span>Mode d'emploi</span><span>→</span></div>
+    </a>
+
+    <a class="kit-card" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=330938429#gid=330938429" target="_blank" rel="noopener">
+      <div class="kit-step">2</div>
+      <div class="kit-title">Constituer mon fichier</div>
+      <div class="kit-desc">Cartographie MyMaps (vert / orange / rouge) + scraping SeLoger, Leboncoin, Bienici.</div>
+      <div class="kit-cta"><span>Mode d'emploi</span><span>→</span></div>
+    </a>
+
+    <a class="kit-card" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=330938429#gid=330938429" target="_blank" rel="noopener">
+      <div class="kit-step">3</div>
+      <div class="kit-title">Pitch téléphonique</div>
+      <div class="kit-desc">Accroche personnalisée · valeur LW (étude rénov, sécurisation vente) · multi-canal tél + mail + LinkedIn.</div>
+      <div class="kit-cta"><span>Mode d'emploi</span><span>→</span></div>
+    </a>
+
+    <a class="kit-card" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=330938429#gid=330938429" target="_blank" rel="noopener">
+      <div class="kit-step">4</div>
+      <div class="kit-title">Préparer le R1</div>
+      <div class="kit-desc">Profil agence en amont · démo live LW Pro sur un bien en vente · supports par segment (AI / CPI / CGP).</div>
+      <div class="kit-cta"><span>Mode d'emploi</span><span>→</span></div>
+    </a>
+
+    <a class="kit-card" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1478715077#gid=1478715077" target="_blank" rel="noopener">
+      <div class="kit-step">5</div>
+      <div class="kit-title">Traiter les objections</div>
+      <div class="kit-desc">Méthode 4 étapes : creuser · reformuler · répondre précisément · valider. Top objections + réponses.</div>
+      <div class="kit-cta"><span>Mode d'emploi</span><span>→</span></div>
+    </a>
+
+    <a class="kit-card" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=330938429#gid=330938429" target="_blank" rel="noopener">
+      <div class="kit-step">6</div>
+      <div class="kit-title">Lune de miel & R2</div>
+      <div class="kit-desc">R2 physique ≤ 15j non négociable · onboarding LW Pro + collaborateurs · 1er lead sous 15j.</div>
+      <div class="kit-cta"><span>Mode d'emploi</span><span>→</span></div>
+    </a>
+
+  </div>
+</div>
+
+<!-- DIAGNOSTIC EXPRESS -->
+<div class="sdiv">Diagnostic express — KPI off ? Je clique, je suis le protocole</div>
+<div class="full">
+  <div class="panel">
+    <div class="panel-head head-black">
+      <span class="emoji">🚨</span><h2>Je lis ma situation → je suis le protocole étape par étape</h2>
+      <a class="badge badge-white" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1068512082#gid=1068512082" target="_blank" rel="noopener">Voir Sheet →</a>
+    </div>
+    <div class="panel-body">
+      <div class="diag-grid">
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1216178625#gid=1216178625" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🔴 Leads insuffisants (&lt; 20/mois)</div>
+            <div class="diag-meta"><span class="diag-kpi">Leads / mois</span></div>
+          </div>
+          <span class="diag-action da-red">Relances TOP + études proactives</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=245905124#gid=245905124" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🔴 Partenaires insuffisants (&lt; 80 actifs)</div>
+            <div class="diag-meta"><span class="diag-kpi">Portefeuille</span></div>
+          </div>
+          <span class="diag-action da-red">Sprint prospection 90 jours</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1393175170#gid=1393175170" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🟠 RDV sans conversion (taux &lt; 33%)</div>
+            <div class="diag-meta"><span class="diag-kpi">RDV → Convention</span></div>
+          </div>
+          <span class="diag-action da-brown">Objections + démo LW Pro + R2</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1008086018#gid=1008086018" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🟠 Pas assez de RDV (&lt; 20/sem)</div>
+            <div class="diag-meta"><span class="diag-kpi">Volume RDV</span></div>
+          </div>
+          <span class="diag-action da-brown">Multicanal + volume contacts</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=673333605#gid=673333605" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🟡 Études sans leads (taux &lt; 50%)</div>
+            <div class="diag-meta"><span class="diag-kpi">Étude → Lead</span></div>
+          </div>
+          <span class="diag-action da-slate">Relances 48h + démo tripartite</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=2035745441#gid=2035745441" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🟡 Partenaires dormants (&gt; 90j sans lead)</div>
+            <div class="diag-meta"><span class="diag-kpi">Actifs 90j</span></div>
+          </div>
+          <span class="diag-action da-slate">Protocole N1→N4 + visite chantier</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1951050876#gid=1951050876" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🟢 Pipeline vide (&lt; 100 prospects/sem)</div>
+            <div class="diag-meta"><span class="diag-kpi">Pipe HubSpot</span></div>
+          </div>
+          <span class="diag-action da-green">5 sources scraping + Sales Façonne</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=877788605#gid=877788605" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🟢 Taux lead → contrat faible (&lt; 21%)</div>
+            <div class="diag-meta"><span class="diag-kpi">Conv. contrat</span></div>
+          </div>
+          <span class="diag-action da-green">Qualité leads + mix CT/CG</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1881649498#gid=1881649498" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🔵 Événements sans ROI</div>
+            <div class="diag-meta"><span class="diag-kpi">ROI events</span></div>
+          </div>
+          <span class="diag-action da-blue">Suivi J+1 + relance J+7</span>
+        </a>
+        <a class="diag-row" href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=818000946#gid=818000946" target="_blank" rel="noopener">
+          <div class="diag-content">
+            <div class="diag-label">🔵 Cadences non tenues</div>
+            <div class="diag-meta"><span class="diag-kpi">Hebdo 100%</span></div>
+          </div>
+          <span class="diag-action da-blue">Rappels Google Agenda + HubSpot</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MIX BUSINESS -->
+<div class="sdiv">Mix business par type de partenaire local</div>
+<div class="profiles">
+
+  <div class="prof-intro">
+    <div class="pnum-big">90<em>%</em></div>
+    <div class="pintro-lbl">Du business via AI + CPI</div>
+    <div class="ptxt">Agents Immobiliers <em>&</em> Courtiers en Prêts — <em>cœur de cible LW</em></div>
+  </div>
+
+  <div class="prof-card pcard-blue">
+    <div class="ph">
+      <span class="ph-tag">AI</span>
+      <span class="ph-name">Agent Immobilier</span>
+      <span class="ph-share">65%</span>
+    </div>
+    <div class="pv"><strong>Plus-value LW :</strong> aider l'AI à mieux vendre grâce aux <strong>études de rénovation</strong> qui projettent l'acquéreur dès la visite — bien valorisé, projection immédiate, négociation facilitée.</div>
+    <div class="pquote">« Sans nous ils vendent — avec nous ils vendent mieux. »</div>
+    <div class="pretrocom">💰 Rétrocom partenaire — 2% HT du devis travaux signé</div>
+  </div>
+
+  <div class="prof-card pcard-slate">
+    <div class="ph">
+      <span class="ph-tag">CPI</span>
+      <span class="ph-name">Courtier en Prêts Immo</span>
+      <span class="ph-share">25%</span>
+    </div>
+    <div class="pv"><strong>Plus-value LW :</strong> <strong>devis travaux pour la banque</strong> en 48h — réduit le lead time du dossier de financement, rassure le client dès le RDV courtier, sécurise l'accord bancaire.</div>
+    <div class="pquote">« Un dossier mieux ficelé, financé plus vite. »</div>
+    <div class="pretrocom">💰 Rétrocom partenaire — 2% HT du devis travaux signé</div>
+  </div>
+
+  <div class="prof-card pcard-mid">
+    <div class="ph">
+      <span class="ph-tag">CGP / Archi</span>
+      <span class="ph-name">Autres prescripteurs</span>
+      <span class="ph-share">10%</span>
+    </div>
+    <div class="pv"><strong>CGP</strong> — investissement locatif, optimisation patrimoniale.<br><strong>Archi</strong> — suivi de chantier, partenariat ponctuel sur projets premium.</div>
+    <div class="pretrocom">💰 Rétrocom — 2% HT du devis travaux signé</div>
+  </div>
+
+</div>
+
+<!-- PLAN D'ACTION — PHASE DÉBUTANT -->
+<div class="sdiv">Plan d'action — Semaine type · 35h / semaine</div>
+
+<div class="full">
+  <div class="funnel-block fb-com">
+    <div class="phase-head ph-com">
+      <span class="fh-emoji">🔴</span>
+      <span class="ph-title">Phase de "Ramp-up"</span>
+      <span class="ph-context">Mois 1-4 · Constituer le portefeuille de 80 partenaires</span>
+      <span class="ph-total">35h / sem</span>
+    </div>
+    <div class="phase-bars">
+      <div class="phase-bar-com" style="width:71%;"></div>
+      <div class="phase-bar-fid" style="width:14%;"></div>
+      <div class="phase-bar-adm" style="width:15%;"></div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-week">
+        <div class="phase-day">
+          <span class="pd-label">Lundi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-com">3h</span><span class="pt-task">Bloc prospection tél. (40 contacts)</span></div>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">Préparation RDV S+1 + LW Pro</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Envoi Chasse Immobilière</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">MAJ HubSpot appels</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Mardi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-com">5h</span><span class="pt-task">5 RDV commercialisation (R1)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">R2 lune de miel (partenaire J-15)</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Mercredi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-com">3h</span><span class="pt-task">Bloc prospection tél. (40 contacts)</span></div>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">Terrain agences ciblées</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Club LW (1er merc.) / Projet Mois (3e merc.)</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Scraping plateformes immo</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Jeudi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-com">5h</span><span class="pt-task">5 RDV commercialisation (R1)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">Onboarding nouveau partenaire</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Vendredi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">Bloc prospection tél. (20 contacts)</span></div>
+          <div class="phase-task"><span class="pt-time pt-com">3h</span><span class="pt-task">Préparation S+1 + cartographie MyMaps</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">1h</span><span class="pt-task">Relances études J+2 / J+7</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Bilan semaine + planif S+1</span></div>
+        </div>
+      </div>
+      <div class="phase-summary">
+        <div class="ps-cat">
+          <div class="ps-cat-head">
+            <span class="ps-cat-name psn-com">🔴 Commercialisation</span>
+            <span><span class="ps-cat-h psh-com">25h</span><span class="ps-cat-pct">71%</span></span>
+          </div>
+          <div class="ps-mini-bar"><div class="ps-mini-fill psmf-com" style="width:71%;"></div></div>
+        </div>
+        <div class="ps-cat">
+          <div class="ps-cat-head">
+            <span class="ps-cat-name psn-fid">🟢 Fidélisation</span>
+            <span><span class="ps-cat-h psh-fid">5h</span><span class="ps-cat-pct">14%</span></span>
+          </div>
+          <div class="ps-mini-bar"><div class="ps-mini-fill psmf-fid" style="width:14%;"></div></div>
+        </div>
+        <div class="ps-cat">
+          <div class="ps-cat-head">
+            <span class="ps-cat-name psn-adm">📋 Admin & pilotage</span>
+            <span><span class="ps-cat-h psh-adm">5h</span><span class="ps-cat-pct">15%</span></span>
+          </div>
+          <div class="ps-mini-bar"><div class="ps-mini-fill psmf-adm" style="width:15%;"></div></div>
+        </div>
+        <div style="margin-top:10px;padding:7px 9px;background:rgba(206,63,38,0.08);border-left:2px solid var(--red);border-radius:0 3px 3px 0;font-size:8px;line-height:1.4;color:var(--red);">
+          <strong>OBJECTIF</strong> · 100 contacts / sem → 20 RDV → 6 conventions → 80 partenaires en 3-4 mois.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLAN D'ACTION — PHASE CROISIÈRE -->
+<div class="full">
+  <div class="funnel-block fb-fid">
+    <div class="phase-head ph-fid">
+      <span class="fh-emoji">🟢</span>
+      <span class="ph-title">Phase Croisière</span>
+      <span class="ph-context">Mois 4+ · Maximiser les leads des 80 partenaires + entretenir le pipe</span>
+      <span class="ph-total">35h / sem</span>
+    </div>
+    <div class="phase-bars">
+      <div class="phase-bar-com" style="width:23%;"></div>
+      <div class="phase-bar-fid" style="width:57%;"></div>
+      <div class="phase-bar-adm" style="width:20%;"></div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-week">
+        <div class="phase-day">
+          <span class="pd-label">Lundi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">Bloc prospection (25 contacts)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">Calls TOP partenaires (2-3)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">1h</span><span class="pt-task">Relances études J+2</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Envoi Chasse Immobilière</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">MAJ HubSpot</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Mardi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-fid">3h</span><span class="pt-task">QBR ou rétroplanning (1 TOP)</span></div>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">3 RDV commercialisation</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">1h</span><span class="pt-task">Déjeuner MID (25€ max)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">1h</span><span class="pt-task">Suivi pipe leads → Sales Façonne</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Mercredi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-fid">3h</span><span class="pt-task">Études proactives biens TOP</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">2h</span><span class="pt-task">Club LW (1er merc.) / Projet Mois (3e)</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Préparation Matinale / Visite chantier</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">1h</span><span class="pt-task">Suivi études en cours</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Jeudi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">Onboarding nouveau partenaire</span></div>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">2 RDV commercialisation</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">Calls TOP / MID (2-3)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">1h</span><span class="pt-task">Relances études J+7</span></div>
+        </div>
+        <div class="phase-day">
+          <span class="pd-label">Vendredi</span>
+          <span class="pd-hours">7h</span>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">Réactivation dormants (N1→N4)</span></div>
+          <div class="phase-task"><span class="pt-time pt-fid">2h</span><span class="pt-task">Études proactives LW Pro</span></div>
+          <div class="phase-task"><span class="pt-time pt-com">2h</span><span class="pt-task">Prep + scraping plateformes</span></div>
+          <div class="phase-task"><span class="pt-time pt-adm">1h</span><span class="pt-task">Bilan semaine + planif S+1</span></div>
+        </div>
+      </div>
+      <div class="phase-summary">
+        <div class="ps-cat">
+          <div class="ps-cat-head">
+            <span class="ps-cat-name psn-com">🔴 Commercialisation</span>
+            <span><span class="ps-cat-h psh-com">8h</span><span class="ps-cat-pct">23%</span></span>
+          </div>
+          <div class="ps-mini-bar"><div class="ps-mini-fill psmf-com" style="width:23%;"></div></div>
+        </div>
+        <div class="ps-cat">
+          <div class="ps-cat-head">
+            <span class="ps-cat-name psn-fid">🟢 Fidélisation</span>
+            <span><span class="ps-cat-h psh-fid">20h</span><span class="ps-cat-pct">57%</span></span>
+          </div>
+          <div class="ps-mini-bar"><div class="ps-mini-fill psmf-fid" style="width:57%;"></div></div>
+        </div>
+        <div class="ps-cat">
+          <div class="ps-cat-head">
+            <span class="ps-cat-name psn-adm">📋 Admin & événements</span>
+            <span><span class="ps-cat-h psh-adm">7h</span><span class="ps-cat-pct">20%</span></span>
+          </div>
+          <div class="ps-mini-bar"><div class="ps-mini-fill psmf-adm" style="width:20%;"></div></div>
+        </div>
+        <div style="margin-top:10px;padding:7px 9px;background:rgba(81,98,75,0.08);border-left:2px solid var(--green);border-radius:0 3px 3px 0;font-size:8px;line-height:1.4;color:var(--green);">
+          <strong>OBJECTIF</strong> · 25 contacts / sem (entretien) + 20 leads / mois → 3,33 contrats / mois · TOP en priorité, faire monter MID, élaguer LOW.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTEFEUILLE + ÉVÉNEMENTS -->
+<div class="sdiv">Portefeuille partenaires & événements</div>
+<div class="grid-b">
+
+  <div class="panel">
+    <div class="panel-head head-green">
+      <span class="emoji">🤝</span><h2>Portefeuille partenaires — Règle 70/20/10</h2>
+      <a class="badge badge-white" href="https://datastudio.google.com/u/0/reporting/827a92ed-3ab4-43a6-8716-4f86c3834ae5/page/gL9VF" target="_blank" rel="noopener">Looker →</a>
+    </div>
+    <div class="panel-body">
+      <div class="partner-cards">
+        <div class="pc pc-green">
+          <div class="pnum">16</div>
+          <span class="ptag">TOP ★</span>
+          <div class="pdesc">2+ leads / 90j · QBR + rétroplanning · Matinales + déjeuners</div>
+          <div class="energy">
+            <div class="energy-bar"><div class="energy-fill ef-green" style="width:70%"></div></div>
+            <div><span class="energy-pct">70%</span><span class="energy-lbl">de l'énergie</span></div>
+          </div>
+        </div>
+        <div class="pc pc-brown">
+          <div class="pnum">24</div>
+          <span class="ptag">MID ◆</span>
+          <div class="pdesc">1+ lead / 90j · Suivi mensuel · Faire monter en TOP via 2e lead 90j</div>
+          <div class="energy">
+            <div class="energy-bar"><div class="energy-fill ef-brown" style="width:20%"></div></div>
+            <div><span class="energy-pct">20%</span><span class="energy-lbl">de l'énergie</span></div>
+          </div>
+        </div>
+        <div class="pc pc-mid">
+          <div class="pnum">40</div>
+          <span class="ptag">LOW ·</span>
+          <div class="pdesc">0 lead · Newsletter uniquement · Si LOW &gt; 6 mois → archiver</div>
+          <div class="energy">
+            <div class="energy-bar"><div class="energy-fill ef-mid" style="width:10%"></div></div>
+            <div><span class="energy-pct">10%</span><span class="energy-lbl">de l'énergie</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--beige);border-radius:4px;padding:8px 10px;margin-bottom:7px;">
+        <div style="font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Priorisation — TOP avant tout</div>
+        <div class="row"><div class="dot d-green"></div><span class="row-note"><strong style="color:var(--black)">TOP priorité absolue — 70% énergie</strong> · QBR trimestriel · jamais plus de 30j sans contact</span></div>
+        <div class="row"><div class="dot d-brown"></div><span class="row-note"><strong style="color:var(--black)">MID vivier de futurs TOP — 20% énergie</strong> · 1 action / mois · objectif : faire monter via 2e lead 90j</span></div>
+        <div class="row"><div class="dot d-mid"></div><span class="row-note"><strong style="color:var(--black)">LOW effort minimal — 10% énergie</strong> · si dormant &gt; 6 mois, archiver pour libérer du temps</span></div>
+        <div class="row"><div class="dot d-red"></div><span class="row-note"><strong style="color:var(--black)">Lune de miel</strong> — R2 physique ≤ 15j · 1er lead sous 15j · onboarding <a class="in-link" href="https://pro.littleworker.fr/" target="_blank" rel="noopener">LW Pro</a></span></div>
+      </div>
+      <span class="tag t-red">MAJ 1er du mois · <a href="https://datastudio.google.com/u/0/reporting/827a92ed-3ab4-43a6-8716-4f86c3834ae5/page/gL9VF" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Looker</a></span>
+      <span class="tag t-green">Dormance &gt;90j → N1→N4</span>
+      <span class="tag t-blue">Budget 150€/mois · 25€/partenaire max</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head head-slate">
+      <span class="emoji">🎉</span><h2>Événements & Communications</h2>
+      <span class="badge badge-white">Cliquer = fiche Cerca</span>
+    </div>
+    <div class="panel-body">
+
+      <div class="ev-section-title">🎉 Événements partenaires</div>
+      <div class="ev-grid-3">
+
+        <a class="ev-card" href="https://littleworker.cerca.io/app/knowledgebase/read/693ade4492015308b10be4cd/69441b4d1a2366b3ed0bcdbc" target="_blank" rel="noopener">
+          <div class="ev-card-top">
+            <div class="ev-card-icon evi-green">🌅</div>
+            <div class="ev-card-name">Matinales by LW</div>
+          </div>
+          <div class="ev-card-meta">
+            <span class="ev-meta-tag em-freq">1× / trimestre</span>
+            <span class="ev-meta-tag em-cost">100€</span>
+            <span class="ev-meta-tag em-scope">TOP</span>
+          </div>
+          <div class="ev-card-desc">Petit-déjeuner au Passage avec partenaires sélectionnés. Mail J+1, relance J+7.</div>
+          <div class="ev-card-cta"><span>Voir fiche Cerca</span><span class="arrow">→</span></div>
+        </a>
+
+        <a class="ev-card" href="https://littleworker.cerca.io/app/knowledgebase/read/693ade4492015308b10be4cd/69441c00e8f170874a076db6" target="_blank" rel="noopener">
+          <div class="ev-card-top">
+            <div class="ev-card-icon evi-brown">🥂</div>
+            <div class="ev-card-name">Afterwork by LW</div>
+          </div>
+          <div class="ev-card-meta">
+            <span class="ev-meta-tag em-freq">1× / semestre</span>
+            <span class="ev-meta-tag em-cost">300€</span>
+            <span class="ev-meta-tag em-scope">Convivial</span>
+          </div>
+          <div class="ev-card-desc">Soirée 18h30-21h30 au Passage. Format détendu. Suivi HubSpot J+1 obligatoire.</div>
+          <div class="ev-card-cta"><span>Voir fiche Cerca</span><span class="arrow">→</span></div>
+        </a>
+
+        <a class="ev-card" href="https://littleworker.cerca.io/app/knowledgebase/read/693ade4492015308b10be4cd/69441ec41a2366b3ed0bd174" target="_blank" rel="noopener">
+          <div class="ev-card-top">
+            <div class="ev-card-icon evi-blue">🏗️</div>
+            <div class="ev-card-name">Visite de chantier</div>
+          </div>
+          <div class="ev-card-meta">
+            <span class="ev-meta-tag em-freq">1× / trimestre</span>
+            <span class="ev-meta-tag em-cost">50€</span>
+            <span class="ev-meta-tag em-scope">5-10 part.</span>
+          </div>
+          <div class="ev-card-desc">Découverte du savoir-faire LW en binôme avec le conducteur. Relance J+3 ciblée.</div>
+          <div class="ev-card-cta"><span>Voir fiche Cerca</span><span class="arrow">→</span></div>
+        </a>
+
+      </div>
+
+      <div class="ev-section-title">📧 Communications</div>
+      <div class="ev-grid-2">
+
+        <a class="ev-card" href="https://littleworker.cerca.io/app/knowledgebase/read/693ade4492015308b10be4cd/694419196299207fd802c4ae" target="_blank" rel="noopener">
+          <div class="ev-card-top">
+            <div class="ev-card-icon evi-slate">📧</div>
+            <div class="ev-card-name">Club Little Worker</div>
+          </div>
+          <div class="ev-card-meta">
+            <span class="ev-meta-tag em-freq">Mensuel — 1er merc.</span>
+            <span class="ev-meta-tag em-tool">Customer.io</span>
+          </div>
+          <div class="ev-card-desc">Newsletter mensuelle ton décontracté. Validation marketing 1 sem. avant envoi. Partenaire du mois mis en avant.</div>
+          <div class="ev-card-cta"><span>Voir fiche Cerca</span><span class="arrow">→</span></div>
+        </a>
+
+        <a class="ev-card" href="https://littleworker.cerca.io/app/knowledgebase/read/693ade4492015308b10be4cd/69441a22e8f170874a076ac7" target="_blank" rel="noopener">
+          <div class="ev-card-top">
+            <div class="ev-card-icon evi-purple">📰</div>
+            <div class="ev-card-name">Le Projet du Mois</div>
+          </div>
+          <div class="ev-card-meta">
+            <span class="ev-meta-tag em-freq">Mi-mensuel — 3e merc.</span>
+            <span class="ev-meta-tag em-scope">Local par ville</span>
+          </div>
+          <div class="ev-card-desc">Newsletter locale : avant/après chantier. Coordination conducteurs travaux + accord client photos obligatoire.</div>
+          <div class="ev-card-cta"><span>Voir fiche Cerca</span><span class="arrow">→</span></div>
+        </a>
+
+      </div>
+
+      <div class="ev-roi">
+        <strong>⚠️ ROI obligatoire</strong> — chaque événement doit générer <strong>≥ 1 lead</strong>. Suivi J+1 + relance J+7 + retours HubSpot systématiques.
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- LEXIQUE CTA -->
+<div class="lex-cta">
+  <a href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit?gid=1360402392#gid=1360402392" target="_blank" rel="noopener">
+    <span class="lex-icon">📚</span>
+    <span>Lexique complet &amp; Liens utiles</span>
+    <span class="lex-arrow">→</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="brand">Little Worker <span>B2B2C Local</span></span>
+  <span class="tagline">Mode d'emploi opérationnel · Usage interne · Pipeline B2B2C</span>
+  <span class="links">
+    <a href="https://pro.littleworker.fr/" target="_blank" rel="noopener">LW Pro</a>
+    ·
+    <a href="https://fly.customer.io/login" target="_blank" rel="noopener">Customer.io</a>
+    ·
+    <a href="https://datastudio.google.com/u/0/reporting/827a92ed-3ab4-43a6-8716-4f86c3834ae5/page/gL9VF" target="_blank" rel="noopener">Looker</a>
+    ·
+    <a href="https://littleworker.cerca.io/app" target="_blank" rel="noopener">Cerca</a>
+    ·
+    <a href="https://docs.google.com/spreadsheets/d/14h6L88P9cdDFCFWGzEnqGua4gEr2Tghm/edit" target="_blank" rel="noopener">Mode d'emploi (Sheet)</a>
+  </span>
+</footer>
+
+</body>
+</html>
